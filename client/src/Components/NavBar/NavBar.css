@@ -1,0 +1,81 @@
+nav {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.top {
+  height: 20rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.btn-crear-navbar {
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  font-style: italic;
+  font-weight: bold;
+}
+.navbar {
+  height: 27rem;
+  width: 100%;
+  border-bottom: 3px solid black;
+  padding-bottom: 1rem;
+  background-image: url("../../img/tabla-de-madera2.jpg");
+  background-size: contain;
+}
+
+.title-navbar {
+  font-size: 7rem;
+}
+
+.filter {
+  display: flex;
+  justify-content: space-evenly;
+  align-content: stretch;
+  align-items: center;
+  position: relative;
+  bottom: 6rem;
+}
+
+.label-nav {
+  font-size: 2rem;
+  font-weight: bold;
+  padding-left: 2rem;
+  padding-right: 0.5rem;
+}
+
+.select-navbar {
+  padding: 1rem;
+  background-color: #917250;
+  color: #fff;
+  border: #fff;
+  border-radius: 15px;
+  font-style: oblique;
+}
+
+.select-navbar:focus {
+  border-radius: 15px 15px 0 0;
+}
+
+option {
+  border-radius: 0 0 15px 15px;
+}
+.btn-container {
+  padding-left: 1rem;
+}
+.btn-refresh {
+  font-size: 4rem;
+  position: relative;
+  padding: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-link {
+  position: relative;
+  top: 9rem;
+  padding: 1rem;
+  cursor: pointer;
+}

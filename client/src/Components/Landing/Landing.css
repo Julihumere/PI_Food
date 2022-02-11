@@ -1,0 +1,81 @@
+.global {
+  position: relative;
+  top: 12rem;
+}
+
+.videoLanding {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.content-title .title {
+  color: wheat;
+  font-size: 6rem;
+  display: flex;
+  justify-content: center;
+}
+
+.content-paragraph {
+  font-size: 3rem;
+  border: 0.2rem solid #ff7000;
+  border-radius: 10px;
+  width: 50rem;
+  padding: 1rem;
+  margin: auto;
+}
+
+.content-paragraph p {
+  color: #fff;
+  text-align: center;
+}
+.content-button {
+  display: flex;
+  justify-content: center;
+  padding-top: 5rem;
+}
+
+a:link {
+  text-decoration: "none";
+  color: "black";
+}
+
+.button-Link {
+  display: inline-block;
+  padding: 1.5rem 3rem;
+  color: #fff;
+  letter-spacing: 0.4rem;
+  font-size: 2.4rem;
+  overflow: hidden;
+  transition: 0.2s;
+  background: transparent;
+  border: none;
+}
+
+.button-Link:hover {
+  background-color: #ff7000;
+  box-shadow: 0 0 1rem #ff7000, 0 0 4rem #ff7000, 0 0 8rem #ff7000;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 590px) {
+  .content-title .title {
+    font-size: 4rem;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .content-title .title {
+    font-size: 3rem;
+  }
+  .content-paragraph {
+    font-size: 2rem;
+    width: 80%;
+  }
+}

@@ -1,0 +1,151 @@
+.card {
+  height: 30rem;
+  width: 30rem;
+  position: relative;
+  margin: 2rem;
+  overflow: hidden;
+  padding: 10 3rem;
+  border-radius: 2%;
+  border: 0.1rem solid #fff;
+  transition: all 0.4s ease-in-out;
+  box-shadow: 1rem 1rem 1rem 0rem rgba(0, 0, 0, 0.7);
+  text-align: center;
+  backdrop-filter: blur(6px);
+}
+.card:hover {
+  height: 50rem;
+  width: 30rem;
+  border-radius: 5px;
+  box-shadow: 1rem 1rem 1rem 0rem rgba(0, 0, 0, 0.7);
+}
+
+.card-encabezado img {
+  position: relative;
+  border-radius: 50%;
+  display: block;
+  height: 20rem;
+  width: 20rem;
+  border-top: 0.8rem solid #fff;
+  border-bottom: 0.8rem solid #fff;
+  object-fit: cover;
+  margin: 2rem auto;
+  transition: all 0.3s ease;
+}
+
+.card-encabezado {
+  position: relative;
+}
+
+.card-encabezado:before,
+.card-encabezado:after {
+  content: "";
+  position: absolute;
+  opacity: 0.7;
+}
+
+.card-encabezado:before {
+  width: 7rem;
+  height: 7rem;
+  bottom: 0%;
+  left: -0.1rem;
+  border-radius: 20px;
+  background-color: rgb(238, 42, 98);
+  transform: rotate(120deg);
+}
+
+.card-encabezado:after {
+  border-radius: 50%;
+  z-index: 20;
+  background-color: yellow;
+  width: 5rem;
+  height: 5rem;
+  top: 0;
+  right: 2.5rem;
+}
+
+.agrandar {
+  transform: scale(0);
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+.desplazar {
+  opacity: 0;
+  transition: all 0.5s ease;
+  transform: translateY(-45px);
+}
+
+.card:hover .agrandar {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.card:hover .desplazar {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.desplazar:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.desplazar:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.desplazar:nth-child(3) {
+  transition-delay: 0.4s;
+}
+
+.info {
+  color: white;
+  text-align: left;
+  font-size: 1.5rem;
+  padding-left: 2em;
+}
+
+.info:nth-child(1) {
+  font-size: 2rem;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.card-acciones {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 2rem;
+}
+
+.card-acciones a {
+  text-decoration: none;
+  color: white;
+}
+
+.button {
+  padding: 0.6rem 1rem;
+  border: 0.1rem solid white;
+  border-radius: 4px;
+  color: #fff;
+  position: relative;
+  bottom: 0%;
+  font-size: 1.5rem;
+  text-shadow: 0 -0.1rem 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0.1rem 0 rgba(255, 255, 255, 0.5) inset,
+    0 0.1rem 0.3rem rgba(0, 0, 0, 0.2);
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.button:hover,
+.button:focus {
+  background-color: #fff;
+  color: black;
+  transition: all 0.5s ease;
+}
+
+.button:active {
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2) inset;
+  background-color: #fff;
+  color: black;
+}

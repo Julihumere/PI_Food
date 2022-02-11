@@ -1,0 +1,27 @@
+.container-searchBar {
+  display: flex;
+  justify-content: center;
+  padding-top: 2rem;
+  position: relative;
+  bottom: 6rem;
+}
+
+.input-searchBar {
+  padding: 1rem;
+  background-color: #917250;
+  color: #fff;
+  border: #fff;
+  border-radius: 15px;
+  font-style: oblique;
+}
+
+.input-searchBar::placeholder {
+  color: #fff;
+}
+
+.btn-searchBar {
+  background: none;
+  border: none;
+  font-size: 3rem;
+  cursor: pointer;
+}

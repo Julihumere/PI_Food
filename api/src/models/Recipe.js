@@ -20,10 +20,13 @@ module.exports = (sequelize) => {
         type: DataTypes.TEXT,
         allowNull: false,
       },
-      image: {
+      dishType: {
+        type: DataTypes.STRING,
+      },
+      img: {
         type: DataTypes.TEXT,
       },
-      punctuation: {
+      score: {
         type: DataTypes.INTEGER,
       },
       healthScore: {
@@ -31,6 +34,11 @@ module.exports = (sequelize) => {
       },
       step: {
         type: DataTypes.TEXT,
+      },
+      createdInDb: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+        defaultValue: true,
       },
     },
     {

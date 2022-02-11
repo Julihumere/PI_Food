@@ -14,9 +14,9 @@ const getApi = async () => {
       dishType: e.dishTypes.map((e) => e),
       diets: e.diets.map((e) => e),
       summary: e.summary,
-      putuaction: e.spoonacularScore,
+      score: e.spoonacularScore,
       healthScore: e.healthScore,
-      step: e.analyzedInstructions.map((e) => e.steps),
+      step: e.analyzedInstructions?.map((e) => e.steps.map((e) => e.step)),
     };
   });
   return ApiInfo;
@@ -26,6 +26,10 @@ const getDb = async () => {
   let DB = await Recipe.findAll({
     include: {
       model: Diet,
+      attributes: ["diet"],
+      through: {
+        attributes: [],
+      },
     },
   });
   return DB;

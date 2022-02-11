@@ -1,0 +1,21 @@
+.container-pagination {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-bottom: 3rem;
+}
+
+.pagination {
+  display: flex;
+  padding-right: 1rem;
+}
+.a {
+  color: #fff;
+  float: left;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  box-shadow: 1rem 1rem 1rem 0rem rgba(0, 0, 0, 0.7);
+  background-image: url("../../img/tabla-de-madera2.jpg");
+  cursor: pointer;
+}

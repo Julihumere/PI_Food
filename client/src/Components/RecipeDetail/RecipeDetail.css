@@ -1,0 +1,134 @@
+.fondo {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  z-index: -9999;
+}
+
+.stretch {
+  width: 100%;
+  height: 100%;
+}
+
+.detail {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.detail-container {
+  height: 70%;
+  width: 70%;
+  border: 3px solid black;
+  border-radius: 15px;
+  backdrop-filter: blur(8px);
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+  color: "black";
+}
+.btn-detail {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  display: inline-block;
+  color: #fff;
+  letter-spacing: 0.4rem;
+  font-size: 2.4rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 1rem;
+}
+
+.btn-detail:hover,
+.btn-detail:focus {
+  background-color: #fff;
+  color: black;
+  transition: all 0.5s ease;
+  border-radius: 10px;
+}
+
+.btn-detail:active {
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2) inset;
+  background-color: #fff;
+  color: black;
+  border-radius: 10px;
+}
+
+.container-btn {
+  display: flex;
+  justify-content: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.title-detail {
+  font-size: 7em;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  font-style: italic;
+  font-weight: bold;
+  color: #fff;
+}
+
+.img-detail {
+  width: 30rem;
+  height: 30rem;
+  display: block;
+  margin: auto;
+  border: 5px solid white;
+  border-radius: 15px;
+}
+
+.score-detail {
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+
+.diet-detail {
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+
+.dishType-detail {
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+
+.summary-detail {
+  font-size: 2rem;
+  color: #fff;
+  margin-left: 3em;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 90%;
+  margin: auto;
+  padding: 1rem;
+  border-radius: 15px 15px 0px 0px;
+}
+
+.step-detail {
+  font-size: 2rem;
+  color: #fff;
+  margin-left: 3em;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 90%;
+  margin: auto;
+  padding: 1rem;
+  border-radius: 0px 0px 15px 15px;
+}

@@ -1,0 +1,24 @@
+.fondo {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  z-index: -9999;
+}
+
+.stretch {
+  width: 100%;
+  height: 100%;
+}
+
+.carta {
+  max-width: 1200px;
+  padding: 20px;
+  padding-bottom: 40px;
+  margin: auto;
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
