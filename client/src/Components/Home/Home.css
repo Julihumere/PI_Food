@@ -1,4 +1,4 @@
-.fondo {
+.wallpaper {
   width: 100%;
   height: 100%;
   position: fixed;
@@ -12,7 +12,7 @@
   height: 100%;
 }
 
-.carta {
+.card {
   max-width: 1200px;
   padding: 20px;
   padding-bottom: 40px;

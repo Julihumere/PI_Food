@@ -20,7 +20,7 @@
   box-shadow: 1rem 1rem 1rem 0rem rgba(0, 0, 0, 0.7);
 }
 
-.card-encabezado img {
+.card-header img {
   position: relative;
   border-radius: 50%;
   display: block;
@@ -33,18 +33,18 @@
   transition: all 0.3s ease;
 }
 
-.card-encabezado {
+.card-header {
   position: relative;
 }
 
-.card-encabezado:before,
-.card-encabezado:after {
+.card-header:before,
+.card-header:after {
   content: "";
   position: absolute;
   opacity: 0.7;
 }
 
-.card-encabezado:before {
+.card-header:before {
   width: 7rem;
   height: 7rem;
   bottom: 0%;
@@ -54,7 +54,7 @@
   transform: rotate(120deg);
 }
 
-.card-encabezado:after {
+.card-header:after {
   border-radius: 50%;
   z-index: 20;
   background-color: yellow;
@@ -64,37 +64,26 @@
   right: 2.5rem;
 }
 
-.agrandar {
-  transform: scale(0);
-  opacity: 0;
-  transition: all 0.4s ease;
-}
-
-.desplazar {
+.enlarge {
   opacity: 0;
   transition: all 0.5s ease;
   transform: translateY(-45px);
 }
 
-.card:hover .agrandar {
-  opacity: 1;
-  transform: scale(1);
-}
-
-.card:hover .desplazar {
+.card:hover .enlarge {
   opacity: 1;
   transform: translateY(0px);
 }
 
-.desplazar:nth-child(1) {
+.enlarge:nth-child(1) {
   transition-delay: 0.1s;
 }
 
-.desplazar:nth-child(2) {
+.enlarge:nth-child(2) {
   transition-delay: 0.2s;
 }
 
-.desplazar:nth-child(3) {
+.enlarge:nth-child(3) {
   transition-delay: 0.4s;
 }
 
@@ -111,19 +100,19 @@
   font-weight: bold;
 }
 
-.card-acciones {
+.card-actions {
   display: flex;
   justify-content: center;
   position: relative;
   top: 2rem;
 }
 
-.card-acciones a {
+.card-actions a {
   text-decoration: none;
   color: white;
 }
 
-.button {
+.btn-detai {
   padding: 0.6rem 1rem;
   border: 0.1rem solid white;
   border-radius: 4px;
@@ -139,8 +128,8 @@
   font-family: "Rowdies", cursive;
 }
 
-.button:hover,
-.button:focus {
+.btn-detai:hover,
+.btn-detai:focus {
   background-color: #fff;
   color: black;
   transition: all 0.5s ease;

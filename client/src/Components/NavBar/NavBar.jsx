@@ -37,7 +37,7 @@ export default function NavBar({ setOrder }) {
   return (
     <nav>
       <div className="navbar">
-        <div className="top">
+        <div className="container-title">
           <h1 className="title-navbar">Foodies</h1>
           <SearchBar />
           <Link to={"/recipe"} className="btn-link">

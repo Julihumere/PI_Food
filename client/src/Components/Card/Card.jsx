@@ -4,9 +4,9 @@ import "./Card.css";
 export default function Card({ name, img, diets, score, createdInDb, id }) {
   return (
     <>
-      <div className="contenedor">
+      <div>
         <div className="card">
-          <div className="card-encabezado">
+          <div className="card-header">
             <img
               src={img}
               className="card-img-top"
@@ -16,8 +16,8 @@ export default function Card({ name, img, diets, score, createdInDb, id }) {
             />
           </div>
           <div className="card-container">
-            <div className="info desplazar">{name}</div>
-            <div className="info desplazar">
+            <div className="info enlarge">{name}</div>
+            <div className="info enlarge">
               <h4>
                 Diets:{" "}
                 {createdInDb
@@ -25,11 +25,11 @@ export default function Card({ name, img, diets, score, createdInDb, id }) {
                   : diets.join(", ")}
               </h4>
             </div>
-            <div className="info desplazar">Score: {score}</div>
+            <div className="info enlarge">Score: {score}</div>
           </div>
-          <div className="card-acciones">
+          <div className="card-actions">
             <Link to={`/recipes/${id}`}>
-              <button className="button">Detalles</button>
+              <button className="btn-detai">Detalles</button>
             </Link>
           </div>
         </div>

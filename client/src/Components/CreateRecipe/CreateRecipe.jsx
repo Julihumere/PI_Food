@@ -56,10 +56,10 @@ export default function CreateRecipe() {
     setError(validate(input));
     const err = validate(input);
     if (Object.values(err).length !== 0) {
-      alert("Corrija los errores para que se cree su receta");
+      alert("Please, correct the errors so that your recipe is created");
     } else {
       dispatch(createRecipe(input));
-      alert("Se creo tu receta!");
+      alert("Your recipe is created!");
       setInput({
         name: "",
         img: "",
@@ -235,7 +235,7 @@ export default function CreateRecipe() {
         </div>
       </div>
 
-      <div className="fondo">
+      <div className="wallpaper">
         <img className="stretch" src={fondo} alt="" />
       </div>
     </div>
