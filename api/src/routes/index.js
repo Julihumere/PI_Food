@@ -89,7 +89,7 @@ router.post("/recipe", async (req, res) => {
       where: { diet: diet },
     });
     recipeCreate.addDiet(recipeDiet);
-    res.send("Receta creada");
+    res.send("Create recipe");
   } catch (e) {
     console.log(e);
   }
