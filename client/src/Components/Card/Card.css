@@ -11,9 +11,10 @@
   box-shadow: 1rem 1rem 1rem 0rem rgba(0, 0, 0, 0.7);
   text-align: center;
   backdrop-filter: blur(6px);
+  font-family: "Roboto Condensed", sans-serif;
 }
 .card:hover {
-  height: 50rem;
+  height: 52rem;
   width: 30rem;
   border-radius: 5px;
   box-shadow: 1rem 1rem 1rem 0rem rgba(0, 0, 0, 0.7);
@@ -100,7 +101,7 @@
 .info {
   color: white;
   text-align: left;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   padding-left: 2em;
 }
 
@@ -135,6 +136,7 @@
     0 0.1rem 0.3rem rgba(0, 0, 0, 0.2);
   background-color: transparent;
   cursor: pointer;
+  font-family: "Rowdies", cursive;
 }
 
 .button:hover,
@@ -142,10 +144,5 @@
   background-color: #fff;
   color: black;
   transition: all 0.5s ease;
-}
-
-.button:active {
-  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2) inset;
-  background-color: #fff;
-  color: black;
+  font-family: "Rowdies", cursive;
 }

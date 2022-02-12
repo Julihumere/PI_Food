@@ -39,6 +39,7 @@ export default function NavBar({ setOrder }) {
       <div className="navbar">
         <div className="top">
           <h1 className="title-navbar">Foodies</h1>
+          <SearchBar />
           <Link to={"/recipe"} className="btn-link">
             <button className="btn-crear-navbar">Create a new Recipe</button>
           </Link>
@@ -93,7 +94,6 @@ export default function NavBar({ setOrder }) {
             </button>
           </div>
         </div>
-        <SearchBar />
       </div>
     </nav>
   );

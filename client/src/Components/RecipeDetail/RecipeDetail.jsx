@@ -41,11 +41,13 @@ export default function RecipeDetail() {
                 ? myRecipe[0].dishType.map((e) => e).join(", ")
                 : myRecipe[0].dishType}
             </h2>
-            <h3 className="summary-detail">Summary: {myRecipe[0].summary}</h3>
+            <h3 className="summary-detail">
+              Summary: {myRecipe[0].summary.replace(/<[^>]*>?/g, "")}
+            </h3>
             <h3 className="step-detail">
               Step by Step:{" "}
               {!myRecipe[0].createdInDb
-                ? myRecipe[0].step.map((e) => e).join(".   ")
+                ? myRecipe[0].step.map((e) => e)
                 : myRecipe[0].step}
             </h3>
             <div className="container-btn">

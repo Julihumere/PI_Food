@@ -1,6 +1,7 @@
 .global {
   position: relative;
   top: 12rem;
+  font-family: "Roboto Condensed", sans-serif;
 }
 
 .videoLanding {
@@ -56,6 +57,7 @@ a:link {
   transition: 0.2s;
   background: transparent;
   border: none;
+  font-family: "Rowdies", cursive;
 }
 
 .button-Link:hover {

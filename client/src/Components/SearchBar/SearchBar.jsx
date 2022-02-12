@@ -11,12 +11,12 @@ export default function SearchBar() {
   const handleInput = (e) => {
     e.preventDefault();
     setName(e.target.value);
-    console.log(name);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(getRecipesByName(name));
+    setName("");
   };
   return (
     <div className="container-searchBar">

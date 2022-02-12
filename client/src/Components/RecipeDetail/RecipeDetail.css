@@ -17,6 +17,7 @@
   height: 100%;
   display: flex;
   justify-content: center;
+  font-family: "Roboto Condensed", sans-serif;
 }
 
 .detail-container {
@@ -32,33 +33,32 @@ a:visited {
   text-decoration: none;
   color: "black";
 }
+
 .btn-detail {
-  display: flex;
-  justify-content: center;
-  padding: 2rem;
-  display: inline-block;
+  background-image: linear-gradient(
+    to right,
+    #000428 0%,
+    #004e92 51%,
+    #000428 100%
+  );
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+  font-family: "Rowdies", cursive;
+}
+
+.btn-detail:hover {
+  background-position: right center;
   color: #fff;
-  letter-spacing: 0.4rem;
-  font-size: 2.4rem;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 1rem;
-}
-
-.btn-detail:hover,
-.btn-detail:focus {
-  background-color: #fff;
-  color: black;
-  transition: all 0.5s ease;
-  border-radius: 10px;
-}
-
-.btn-detail:active {
-  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2) inset;
-  background-color: #fff;
-  color: black;
-  border-radius: 10px;
+  text-decoration: none;
+  font-family: "Rowdies", cursive;
 }
 
 .container-btn {

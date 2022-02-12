@@ -1,4 +1,5 @@
 import React from "react";
+import "./HomeRouter.css";
 import { Route, Routes } from "react-router-dom";
 import CreateRecipe from "../Components/CreateRecipe/CreateRecipe.jsx";
 import Home from "../Components/Home/Home.jsx";

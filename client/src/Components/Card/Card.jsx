@@ -15,7 +15,7 @@ export default function Card({ name, img, diets, score, createdInDb, id }) {
               alt=""
             />
           </div>
-          <div className="card-contenido">
+          <div className="card-container">
             <div className="info desplazar">{name}</div>
             <div className="info desplazar">
               <h4>
