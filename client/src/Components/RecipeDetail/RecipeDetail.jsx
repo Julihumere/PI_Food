@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import fondo from "../../img/fondo RecipeDetail.jpg";
+import fondo from "../../img/restaurante2.jpg";
 import { getDetail } from "../../Redux/Actions/Actions";
 import "./RecipeDetail.css";
 import Loading from "../../Components/Loading/Loading";

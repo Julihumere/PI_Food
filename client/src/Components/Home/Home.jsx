@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 
-import fondo from "../../img/home.jpg";
+import fondo from "../../img/t87hr-v9dzx.jpg";
 import "./Home.css";
 import { getRecipes } from "../../Redux/Actions/Actions";
 import Card from "../Card/Card";
@@ -41,7 +41,7 @@ export default function Home() {
         <Loading setLoading={setLoading} />
       ) : (
         <>
-          <div className="card">
+          <div className="container-card">
             {currentRecipe &&
               currentRecipe.map((c) => (
                 <Card
