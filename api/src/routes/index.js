@@ -8,12 +8,12 @@ router.get("/recipes", async (req, res) => {
   try {
     let Api = await getAll();
     if (name) {
-      const nombre = Api.filter((e) =>
+      const filterByName = Api.filter((e) =>
         e.name.toLowerCase().includes(name.toLowerCase())
       );
-      nombre.length
-        ? res.status(200).json(nombre)
-        : res.status(404).send("No existe una receta con el nombre solicitado");
+      filterByName.length
+        ? res.status(200).json(filterByName)
+        : res.status(404).send("Theres isn't recipe with that name");
     } else {
       res.send(Api);
     }
@@ -29,7 +29,7 @@ router.get("/recipes/:id", async (req, res) => {
     const ID = Api.filter((e) => e.id == id);
     ID.length > 0
       ? res.status(200).json(ID)
-      : res.status(404).send("No existe ninguna receta con esa ID");
+      : res.status(404).send("There isn't recipe with that ID");
   } catch (e) {
     console.log(e);
   }
