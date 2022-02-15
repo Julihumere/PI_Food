@@ -101,19 +101,12 @@
 }
 
 .card-actions {
-  display: flex;
-  justify-content: center;
   position: relative;
   top: 2rem;
 }
 
-.card-actions a {
-  text-decoration: none;
-  color: white;
-}
-
 .btn-detai {
-  padding: 0.6rem 1rem;
+  padding: 0.6em 1em;
   border: 0.1rem solid white;
   border-radius: 4px;
   color: #fff;

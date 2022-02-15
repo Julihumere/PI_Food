@@ -1,13 +1,18 @@
 import { Route, Routes } from "react-router-dom";
 import Landing from "../Components/Landing/Landing.jsx";
-import HomeRouter from "../Router/HomeRouter";
+import "./AppRouter.css";
+import CreateRecipe from "../Components/CreateRecipe/CreateRecipe.jsx";
+import Home from "../Components/Home/Home.jsx";
+import RecipeDetail from "../Components/RecipeDetail/RecipeDetail";
 
 function App() {
   return (
     <>
       <Routes>
         <Route exact path="/" element={<Landing />} />
-        <Route path="/*" element={<HomeRouter />} />
+        <Route exact path="/home" element={<Home />} />
+        <Route path="/recipes/:id" element={<RecipeDetail />} />
+        <Route exact path="/recipe" element={<CreateRecipe />} />
       </Routes>
     </>
   );

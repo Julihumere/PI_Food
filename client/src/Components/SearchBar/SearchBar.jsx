@@ -25,6 +25,7 @@ export default function SearchBar() {
         type="text"
         placeholder="Recipes..."
         className="input-searchBar"
+        value={name}
       />
       <button
         className="btn-searchBar"

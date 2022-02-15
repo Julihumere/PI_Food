@@ -41,7 +41,7 @@ export default function NavBar({ setOrder }) {
           <h1 className="title-navbar">Foodies</h1>
           <SearchBar />
           <Link to={"/recipe"} className="btn-link">
-            <button className="btn-crear-navbar">Create a new Recipe</button>
+            <button className="btn-crear-navbar">📝Create a new Recipe</button>
           </Link>
         </div>
 
@@ -88,6 +88,7 @@ export default function NavBar({ setOrder }) {
               <option value="ketogenic">Ketogenic</option>
             </select>
           </div>
+
           <div className="btn-container">
             <button className="btn-refresh" onClick={(e) => handleClick(e)}>
               🔁
