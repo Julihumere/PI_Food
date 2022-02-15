@@ -14,9 +14,9 @@
   float: left;
   padding: 8px 16px;
   border-radius: 8px;
-  border: none;
+  border: 1px solid black;
   box-shadow: 1rem 1rem 1rem 0rem rgba(0, 0, 0, 0.7);
-  background-image: url("../../img/tabla-de-madera2.jpg");
+  background-image: url("../../img/searchBar.jpg");
   cursor: pointer;
   font-family: "Rowdies", cursive;
 }

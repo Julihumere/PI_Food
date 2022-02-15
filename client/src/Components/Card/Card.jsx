@@ -16,7 +16,7 @@ export default function Card({ name, img, diets, score, createdInDb, id }) {
             />
           </div>
           <div className="card-container">
-            <div className="info enlarge">{name}</div>
+            <div className="info">{name}</div>
             <div className="info enlarge">
               <h4>
                 Diets:{" "}
@@ -24,8 +24,8 @@ export default function Card({ name, img, diets, score, createdInDb, id }) {
                   ? diets.map((e) => e.diet).join(", ")
                   : diets.join(", ")}
               </h4>
+              <h4>Score: {score}</h4>
             </div>
-            <div className="info enlarge">Score: {score}</div>
           </div>
           <div className="card-actions">
             <Link to={`/recipes/${id}`}>

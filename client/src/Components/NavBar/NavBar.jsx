@@ -9,6 +9,7 @@ import {
   filterByScore,
   getRecipes,
 } from "../../Redux/Actions/Actions";
+import { useState } from "react";
 
 export default function NavBar({ setOrder }) {
   const dispatch = useDispatch();

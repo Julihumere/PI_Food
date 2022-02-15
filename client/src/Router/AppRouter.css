@@ -3,36 +3,13 @@
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #aa6821;
+  background-image: url("../img/searchBar.jpg");
+  background-size: cover;
+  border: 1px solid black;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-image: radial-gradient(
-    circle at 67.92% 116.88%,
-    #b38138 0,
-    #b37732 12.5%,
-    #ae6929 25%,
-    #a6581d 37.5%,
-    #9a420e 50%,
-    #8e2a02 62.5%,
-    #840e00 75%,
-    #7e0000 87.5%,
-    #7b0000 100%
-  );
+  background-image: url("../img/tabla-de-madera2.jpg");
+  border: 1px solid rgba(0, 0, 0, 0.418);
   border-radius: 25px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background-image: radial-gradient(
-    circle at 54.24% 98.42%,
-    #e19825 0,
-    #e38d22 12.5%,
-    #e17d1b 25%,
-    #da6810 37.5%,
-    #ce4d00 50%,
-    #c22d00 62.5%,
-    #b90000 75%,
-    #b30005 87.5%,
-    #b10010 100%
-  );
 }

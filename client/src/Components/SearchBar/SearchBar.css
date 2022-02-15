@@ -9,15 +9,16 @@
   display: flex;
   justify-content: center;
   padding: 1rem;
-  background-color: #917250;
+  background-image: url("../../img/searchBar.jpg");
   color: #fff;
-  border: #fff;
+  border: 1px solid black;
   border-radius: 15px;
   font-style: oblique;
 }
 
 .input-searchBar::placeholder {
   color: #fff;
+  font-family: "Syne Tactile", cursive;
 }
 
 .btn-searchBar {

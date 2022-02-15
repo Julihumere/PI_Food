@@ -1,12 +1,12 @@
 .card {
-  height: 30rem;
+  height: 34rem;
   width: 30rem;
   position: relative;
   margin: 2rem;
   overflow: hidden;
-  padding: 10 3rem;
-  border-radius: 2%;
-  border: 0.1rem solid #fff;
+  padding: 1em 2em;
+  border-radius: 10px;
+  border: 1px solid #fff;
   transition: all 0.4s ease-in-out;
   box-shadow: 1rem 1rem 1rem 0rem rgba(0, 0, 0, 0.7);
   text-align: center;
@@ -75,18 +75,6 @@
   transform: translateY(0px);
 }
 
-.enlarge:nth-child(1) {
-  transition-delay: 0.1s;
-}
-
-.enlarge:nth-child(2) {
-  transition-delay: 0.2s;
-}
-
-.enlarge:nth-child(3) {
-  transition-delay: 0.4s;
-}
-
 .info {
   color: white;
   text-align: left;
@@ -107,15 +95,11 @@
 
 .btn-detai {
   padding: 0.6em 1em;
-  border: 0.1rem solid white;
+  border: 1px solid white;
   border-radius: 4px;
   color: #fff;
-  position: relative;
-  bottom: 0%;
   font-size: 1.5rem;
-  text-shadow: 0 -0.1rem 0 rgba(0, 0, 0, 0.5);
-  box-shadow: 0 0.1rem 0 rgba(255, 255, 255, 0.5) inset,
-    0 0.1rem 0.3rem rgba(0, 0, 0, 0.2);
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
   background-color: transparent;
   cursor: pointer;
   font-family: "Rowdies", cursive;

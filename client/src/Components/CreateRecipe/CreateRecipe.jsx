@@ -73,6 +73,13 @@ export default function CreateRecipe() {
     }
   };
 
+  const handleDelete = (e) => {
+    setInput({
+      ...input,
+      diet: input.diet.filter((diet) => diet !== e),
+    });
+  };
+
   const validate = (input) => {
     let errors = {};
     if (!input.name) {
@@ -104,13 +111,6 @@ export default function CreateRecipe() {
       errors.step = "Step by Step is required";
     }
     return errors;
-  };
-
-  const handleDelete = (e) => {
-    setInput({
-      ...input,
-      diet: input.diet.filter((diet) => diet !== e),
-    });
   };
 
   return (
