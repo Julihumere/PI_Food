@@ -2,9 +2,16 @@ const { Router } = require("express");
 const router = Router();
 const { Recipe, Diet } = require("../db");
 const { getAll } = require("../Controllers/Controllers");
+const { Op } = require("sequelize");
+function getRecipesByName(name) {}
 
-router.get("/recipes", async (req, res) => {
+function getDbRecipes(name) {
+  return Recipe.findAll({ where: { name: { [Op.iLike]: `%${name}%` } } });
+}
+
+router.get("/recipes", async (req, res, next) => {
   const { name } = req.query;
+
   try {
     let Api = await getAll();
     if (name) {
@@ -13,10 +20,21 @@ router.get("/recipes", async (req, res) => {
       );
       filterByName.length
         ? res.status(200).send(filterByName)
-        : res.status(404).send("Theres isn't recipe with that name");
+        : res.status(404).json({ msg: "Theres isn't recipe with that name" });
     } else {
-      res.send(Api);
+      next();
     }
+  } catch (e) {
+    console.log(e);
+  }
+});
+
+router.get("/recipes", async (req, res) => {
+  try {
+    let Api = await getAll();
+    Api.length > 0
+      ? res.status(200).send(Api)
+      : res.status(404).json({ msg: "No recipes" });
   } catch (e) {
     console.log(e);
   }
@@ -64,7 +82,7 @@ router.get("/types", async (req, res) => {
   }
 });
 
-router.post("/recipe", async (req, res) => {
+router.post("/recipe", async (req, res, next) => {
   const {
     name,
     summary,
@@ -91,10 +109,10 @@ router.post("/recipe", async (req, res) => {
     let recipeDiet = await Diet.findAll({
       where: { diet: diet },
     });
-    recipeCreate.addDiet(recipeDiet);
+    await recipeCreate.addDiet(recipeDiet);
     res.status(200).send("Create recipe");
   } catch (e) {
-    console.log(e);
+    next(e);
   }
 });
 
