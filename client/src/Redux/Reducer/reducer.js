@@ -7,7 +7,7 @@ import {
   GET_DETAIL,
   GET_DIETS,
   CREATE_RECIPE,
-  FILTER_BY_CREATION,
+  GET_ERROR,
 } from "../Actions/Actions";
 
 const initialState = {
@@ -15,6 +15,7 @@ const initialState = {
   recipes: [],
   diets: [],
   detail: [],
+  error: "",
 };
 
 export default function reducer(state = initialState, action) {
@@ -37,6 +38,12 @@ export default function reducer(state = initialState, action) {
         ...state,
         recipes: action.payload,
       };
+    case GET_ERROR:
+      return {
+        ...state,
+        error: action.payload,
+        recipes: [],
+      };
     case GET_DETAIL:
       return {
         ...state,
@@ -44,23 +51,25 @@ export default function reducer(state = initialState, action) {
       };
 
     case FILTER_BY_DIETS:
+      let diets = [...state.menuComplete];
       let recipesFilter =
         action.payload === "All"
           ? state.menuComplete
-          : state.menuComplete.filter((e) => e.diets.includes(action.payload));
+          : diets.filter((e) => e.diets.includes(action.payload));
       return {
         ...state,
         recipes: recipesFilter,
       };
     case FILTER_BY_LETTER:
-      const letterFilter =
+      let letter = [...state.recipes];
+      let letterFilter =
         action.payload === "asc"
-          ? state.menuComplete.sort((a, b) => {
+          ? letter.sort((a, b) => {
               if (a.name > b.name) return 1;
               if (a.name < b.name) return -1;
               return 0;
             })
-          : state.menuComplete.sort((a, b) => {
+          : letter.sort((a, b) => {
               if (a.name > b.name) return -1;
               if (a.name < b.name) return 1;
               return 0;
@@ -71,14 +80,15 @@ export default function reducer(state = initialState, action) {
       };
 
     case FILTER_BY_SCORE:
-      const scoreFilter =
+      let score = [...state.recipes];
+      let scoreFilter =
         action.payload === "asc"
-          ? state.menuComplete.sort((a, b) => {
+          ? score.sort((a, b) => {
               if (a.score > b.score) return 1;
               if (a.score < b.score) return -1;
               return 0;
             })
-          : state.menuComplete.sort((a, b) => {
+          : score.sort((a, b) => {
               if (a.score > b.score) return -1;
               if (a.score < b.score) return 1;
               return 0;

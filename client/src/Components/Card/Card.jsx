@@ -29,7 +29,7 @@ export default function Card({ name, img, diets, score, createdInDb, id }) {
           </div>
           <div className="card-actions">
             <Link to={`/recipes/${id}`}>
-              <button className="btn-detai">Detalles</button>
+              <button className="btn-detai">Detail</button>
             </Link>
           </div>
         </div>

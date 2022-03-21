@@ -1,4 +1,3 @@
-import axios from "axios";
 export const RECIPES = "RECIPES";
 export const GET_DIETS = "GET_DIETS";
 export const GET_RECIPES_BY_NAME = "GET_RECIPES_BY_NAME";
@@ -7,6 +6,7 @@ export const FILTER_BY_DIETS = "FILTER_BY_DIETS";
 export const FILTER_BY_LETTER = "FILTER_BY_LETTER";
 export const FILTER_BY_SCORE = "FILTER_BY_SCORE";
 export const CREATE_RECIPE = "CREATE_RECIPE";
+export const GET_ERROR = "GET_ERROR";
 
 export const getRecipes = () => (dispatch) => {
   try {
@@ -43,10 +43,17 @@ export const getRecipesByName = (name) => (dispatch) => {
     return fetch("http://localhost:3001/recipes?name=" + name)
       .then((response) => response.json())
       .then((data) => {
-        dispatch({
-          type: GET_RECIPES_BY_NAME,
-          payload: data,
-        });
+        if (!data.msg) {
+          dispatch({
+            type: GET_RECIPES_BY_NAME,
+            payload: data,
+          });
+        } else {
+          dispatch({
+            type: GET_ERROR,
+            payload: data.msg,
+          });
+        }
       });
   } catch (e) {
     console.log(e);
@@ -58,7 +65,6 @@ export const getDetail = (id) => (dispatch) => {
     return fetch(`http://localhost:3001/recipes/${id}`)
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         dispatch({
           type: GET_DETAIL,
           payload: data,
@@ -69,17 +75,24 @@ export const getDetail = (id) => (dispatch) => {
   }
 };
 
-// export const getDetail = (id) => async (dispatch) => {
-//   try {
-//     var json = await axios.get("http://localhost:3001/recipes/" + id);
-//     return dispatch({
-//       type: GETDETAIL,
-//       payload: json.data,
-//     });
-//   } catch (e) {
-//     console.log(e);
-//   }
-// };
+export const createRecipe = (payload) => (dispatch) => {
+  try {
+    return fetch("http://localhost:3001/recipe", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    }).then(() => {
+      dispatch({
+        type: CREATE_RECIPE,
+      });
+    });
+  } catch (e) {
+    console.log(e);
+  }
+};
 
 export const filterByDiets = (payload) => {
   return {
@@ -101,27 +114,3 @@ export const filterByScore = (payload) => {
     payload,
   };
 };
-
-export const createRecipe = (payload) => (dispatch) => {
-  try {
-    return fetch("http://localhost:3001/recipe", {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(payload),
-    }).then((response) => {
-      dispatch({
-        type: CREATE_RECIPE,
-      });
-    });
-  } catch (e) {
-    console.log(e);
-  }
-};
-
-// export const createRecipe = (payload) => async () => {
-//   const response = await axios.post("http://localhost:3001/recipe", payload);
-//   return response;
-// };

@@ -19,6 +19,7 @@
 .input-searchBar::placeholder {
   color: #fff;
   font-family: "Syne Tactile", cursive;
+  font-size: 1.7rem;
 }
 
 .btn-searchBar {

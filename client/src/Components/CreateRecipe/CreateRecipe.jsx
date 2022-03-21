@@ -45,10 +45,12 @@ export default function CreateRecipe() {
   };
 
   const handleSelect = (e) => {
-    setInput({
-      ...input,
-      diet: [...input.diet, e.target.value],
-    });
+    if (!input.diet.includes(e.target.value)) {
+      setInput({
+        ...input,
+        diet: [...input.diet, e.target.value],
+      });
+    }
   };
 
   const handleSubmit = (e) => {
@@ -80,6 +82,10 @@ export default function CreateRecipe() {
     });
   };
 
+  const repeat = (array) => {
+    return new Set(array).size !== array.length;
+  };
+
   const validate = (input) => {
     let errors = {};
     if (!input.name) {
@@ -90,6 +96,8 @@ export default function CreateRecipe() {
     }
     if (!input.diet) {
       errors.diet = "Diets is required";
+    } else if (repeat(input.diet)) {
+      errors.diet = "diets repeated aren't allowed";
     }
     if (!input.score) {
       errors.score = "Score is required";

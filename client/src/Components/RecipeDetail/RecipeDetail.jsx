@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import fondo from "../../img/restaurante2.jpg";
 import { getDetail } from "../../Redux/Actions/Actions";
 import "./RecipeDetail.css";
-import Loading from "../../Components/Loading/Loading";
+import Loading from "../Loading/Loading";
 import { useState } from "react";
 
 export default function RecipeDetail() {
@@ -13,7 +13,7 @@ export default function RecipeDetail() {
   const { id } = useParams();
   useEffect(() => {
     dispatch(getDetail(id));
-  }, [dispatch, id]);
+  }, [id]);
   const myRecipe = useSelector((state) => state.detail);
   const [loading, setLoading] = useState(true);
 
@@ -47,7 +47,7 @@ export default function RecipeDetail() {
             <h3 className="step-detail">
               Step by Step:{" "}
               {!myRecipe[0].createdInDb
-                ? myRecipe[0].step.map((e) => e)
+                ? myRecipe[0].step.map((e) => e).join(", ")
                 : myRecipe[0].step}
             </h3>
             <div className="container-btn">

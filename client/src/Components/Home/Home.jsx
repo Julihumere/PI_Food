@@ -13,18 +13,18 @@ import Loading from "../Loading/Loading";
 export default function Home() {
   const dispatch = useDispatch();
   const allRecipes = useSelector((state) => state.recipes);
+  const error = useSelector((state) => state.error);
 
   useEffect(() => {
     dispatch(getRecipes());
   }, []);
 
-  const [page, setPage] = useState(1); //inicio en la primera pagina
-  const [recipePerPage, setRecipePerPage] = useState(9); //cuantas recetas muestro por pagina
-  const lastRecipe = page * recipePerPage; // 1 * 9 = 9
-  const firstRecipe = lastRecipe - recipePerPage; // 9 - 9 = 0
-  const currentRecipe = allRecipes.slice(firstRecipe, lastRecipe); //corto del indice de la primera receta hasta la ultima receta, es decir, mi pagina va a ser de 0 a 9 (corta 9 elementos pero al ser un array son 8 indices)
-  // Page 1 = [0, 1, 2, 3, 4, 5, 6, 7, 8]
-  // Page 2 = [9, 10, 11, 12 ,13, 14, 15, 16]
+  const [page, setPage] = useState(1);
+  const [recipePerPage, setRecipePerPage] = useState(9);
+  const lastRecipe = page * recipePerPage;
+  const firstRecipe = lastRecipe - recipePerPage;
+  const currentRecipe = allRecipes?.slice(firstRecipe, lastRecipe);
+
   const [order, setOrder] = useState("");
   const [loading, setLoading] = useState(true);
 
@@ -42,8 +42,8 @@ export default function Home() {
       ) : (
         <>
           <div className="container-card">
-            {currentRecipe &&
-              currentRecipe.map((c) => (
+            {currentRecipe.length > 0 ? (
+              currentRecipe?.map((c) => (
                 <Card
                   key={c.id}
                   id={c.id}
@@ -53,7 +53,10 @@ export default function Home() {
                   score={c.score}
                   createdInDb={c.createdInDb}
                 />
-              ))}
+              ))
+            ) : (
+              <h1>{error}</h1>
+            )}
           </div>
           <div>
             <Pagination

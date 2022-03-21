@@ -1,9 +1,17 @@
 import React from "react";
 import "./Pagination.css";
 
-export default function Pagination({ recipePerPage, allRecipes, pagination }) {
+export default function Pagination({
+  recipePerPage,
+  allRecipes,
+  pagination,
+  page,
+  setPage,
+}) {
   const pageNum = [];
-  for (let i = 1; i <= Math.ceil(allRecipes / recipePerPage); i++) {
+  const totalPages = Math.ceil(allRecipes / recipePerPage);
+
+  for (let i = 1; i <= totalPages; i++) {
     pageNum.push(i);
   }
 

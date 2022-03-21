@@ -9,7 +9,6 @@ import {
   filterByScore,
   getRecipes,
 } from "../../Redux/Actions/Actions";
-import { useState } from "react";
 
 export default function NavBar({ setOrder }) {
   const dispatch = useDispatch();
@@ -26,13 +25,13 @@ export default function NavBar({ setOrder }) {
   const handleFilterLetter = (e) => {
     e.preventDefault();
     dispatch(filterByLetter(e.target.value));
-    setOrder(`Ordenado ${e.target.value}`);
+    setOrder(`${e.target.value}`);
   };
 
   const handleFilterScore = (e) => {
     e.preventDefault();
     dispatch(filterByScore(e.target.value));
-    setOrder(`Ordenado ${e.target.value}`);
+    setOrder(`${e.target.value}`);
   };
 
   return (
